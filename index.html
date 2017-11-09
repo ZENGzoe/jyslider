@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jyswiper</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<div class="jy_play">
+    <div class="jy_play_ct J_play_ct">
+        <div class="page page1"></div>
+        <div class="page page2"></div>
+        <div class="page page3"></div>
+        <div class="page page4"></div>
+    </div>
+</div>
+<body>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/jyswiper.js"></script>
+    <script>
+        $(".jy_play").jyswiper({
+            swiperCt : $(".J_play_ct"),             //滑动主元素
+            winType : 0 ,                           //滑动子元素的宽度，0为屏幕宽度，1为子元素的实际宽度
+            isNeedPoint : true ,                    //是否需要滑动导航点
+            initIdx : 1,                            //初始态
+            slideTime : .3,                        //滑动时间,单位是s
+        })
+    </script>
+</body>
+</html>

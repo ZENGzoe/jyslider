@@ -1,0 +1,63 @@
+
+@import "compass/reset";
+@import "./common.scss";
+body{
+    background:#232428;
+}
+.jy_play{
+    width:vw(1125);
+    height:vw(800);
+    position: relative;
+    overflow:hidden;
+     .dots{
+        position:absolute; 
+        width:vw(1125);
+        height:vw(22);
+        bottom:vw(30);
+    }
+    .dots_ct{
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; 
+        span{
+            width:vw(22);
+            height:vw(22);
+            background-color:#d77d34;
+            margin-right:vw(15);
+            border-radius:50%;
+            &:last-child{
+                margin-right:0;
+            }
+            &.active{
+                background:#232428;
+            }
+        }
+    }
+}
+.jy_play_ct{
+    overflow: hidden;
+    position:absolute;
+    .page{
+        float:left;
+        width:vw(1049);
+        height:vw(800);
+        margin:0 vw(30);
+        border-radius:vw(5);
+        padding:vw(20) 0 vw(50) vw(16);
+    }
+    .page1{
+        background:#acc;
+    }
+    .page2{
+        background:#cac;
+    }
+    .page3{
+        background:#cfc;
+    }
+    .page4{
+        background:#cda;
+    }
+}

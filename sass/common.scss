@@ -1,0 +1,42 @@
+$vm_base : 1125;
+
+@function vw ($value){
+    $value : $value/($value * 0 + 1);
+    @return $value/$vm_base*100vw;
+}
+
+@function removePX($value){
+    @return $value/($value * 0 + 1)
+}
+
+@mixin spritesMixin($name,$sprites){ 
+    $iconPath:sprite-file($sprites,$name); 
+    $iconWidth:image-width($iconPath);
+    $iconHeight:image-height($iconPath); 
+    $iconPosY : nth(sprite-position($sprites,$name),2);
+    $spriteWidth : sprite-width($sprites);
+    $spriteHeight : sprite-height($sprites);
+    background-repeat:no-repeat;
+    background-image:sprite-url($sprites);
+    // background-image:url("../img/" + $iconPath);
+    background-size:vw($spriteWidth) vw($spriteHeight);
+    // background-size:vw($iconWidth) vw($iconHeight);
+    width:vw($iconWidth);
+    height: vw($iconHeight);
+    background-position:0 removePX($iconPosY/($iconHeight - $spriteHeight)) * 100%;
+}
+@mixin importImage($url,$width,$height){
+    background:url($url) no-repeat 0 0;
+    background-size:$width $height;
+    width:$width;
+    height:$height;
+}
+@mixin posEle($width,$height,$top,$left){
+    position:absolute;
+    width:$width;
+    height:$height;
+    top:$top;
+    left:$left;
+}
+
+
