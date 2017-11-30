@@ -91,7 +91,7 @@
                 item = swiperCt.children('div');
 
             var l = item.length,
-                w = settings.winType == 0 ? $(window).width() : $(item[0]).width(),
+                w = settings.winType == 0 ? $(window).width() : $(item[0])[0].getBoundingClientRect().width,
                 _dots = '<div class="dots J_dots"><div class="dots_ct">',
                 initIdx = settings.initIdx,
                 firstHtml , endHtml , _left , _html;
