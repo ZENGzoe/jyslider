@@ -11,7 +11,8 @@
 
         var widArr = [],
             slideNum = 0,
-            statusIdx = 0;
+            statusIdx = 0,
+            _this = this;
 
         //改变状态
         function changeStatus(i,isMove){
@@ -27,7 +28,7 @@
             })
 
             var _idx = i == 1 || i ==  lastIdx+1 ? 0 : (i == 0 || i == lastIdx ) ? (lastIdx - 1) : (i - 1);
-            $(".J_dots span").removeClass("active").eq(_idx).addClass("active");
+            $(_this.find(".J_dots span")).removeClass("active").eq(_idx).addClass("active");
             setTimeout(function(){
                 if(i == 0){
                     statusIdx = lastIdx;
@@ -86,7 +87,7 @@
             })
         }
 
-        return this.each(function(){
+        return _this.each(function(){
             var swiperCt = settings.swiperCt,
                 item = swiperCt.children('div');
 
