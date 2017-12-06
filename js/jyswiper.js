@@ -62,6 +62,7 @@
             })
 
             swiperCt.on('touchmove',function(e){
+                e.preventDefault();
                 var changeX = startX - e.targetTouches[0].pageX,
                     idx = statusIdx,
                     curLf = widArr[idx];
